@@ -1,6 +1,9 @@
 package be.profacile.pharmashare.domain.repository;
 
-/** Florent — compléter le contrat Spring Data indiqué dans docs/sprint-2.md. */
-public interface PartenaireRepository {
-    // TODO : héritage JpaRepository et méthode de recherche.
+import be.profacile.pharmashare.domain.model.Partenaire;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface PartenaireRepository extends JpaRepository<Partenaire, Long> {
+    List<Partenaire> findByHabiliteTrue();
 }
